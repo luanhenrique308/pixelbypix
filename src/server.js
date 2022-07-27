@@ -26,6 +26,4 @@ app.use(morgan('dev'))
 
 app.use(require('./routes/index'));
 
-app.listen(port, ()=>{
-    console.log('Servidor Rodando')
-})
+app.listen(process.env.PORT || 3000)
