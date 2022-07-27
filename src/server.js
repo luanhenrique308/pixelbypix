@@ -4,6 +4,7 @@ const app = express();
 const morgan = require('morgan')
 const port = process.env.PORT
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 
 mongoose.connect(
@@ -17,6 +18,7 @@ mongoose.connect(
     console.log(`Error \n${err}`)
 })
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(morgan('dev'))
