@@ -5,13 +5,15 @@ const axios = require('axios');
 
 class PixService {
     async createCharge() {
-        mercadopago.payment.create(payment_data)
+        const response = await mercadopago.payment.create(payment_data)
             .then(function (data) {
                 console.log(data.response)
                 return data.response
             }).catch(function (error) {
                 console.log(error)
             });
+
+        return response
     }
     async checkPayment(id) {
         const idPix = id
