@@ -8,12 +8,13 @@ class ImageService {
         }
     }
     async createImage(body) {
-        const { originalname: name, size, key, location: url = '' } = body
+        const { originalname: name, size, key, index,location: url = '' } = body
         const createImage = Image.create({
             name,
             size,
             key,
-            url
+            url,
+            index
         })
         return body
     }
