@@ -5,6 +5,7 @@ const PostSChema = new mongoose.Schema({
     size: Number,
     key: String, 
     url: String, 
+    index: Number,
     createdAt : {
         type : Date, 
         default: Date.now
